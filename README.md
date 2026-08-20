@@ -3,17 +3,18 @@
 
 Synced automatically by SolveBase.
 
-**Total solved: 4**
+**Total solved: 5**
 
 ## Codeforces
 
 Solutions by [Sinister007](https://codeforces.com/profile/Sinister007), organized by difficulty rating.
 
-**Solved: 1**
+**Solved: 2**
 
 | Difficulty | Solved |
 | --- | --- |
 | [1400](./codeforces/1400) | 1 |
+| [1500](./codeforces/1500) | 1 |
 
 
 ## LeetCode
