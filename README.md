@@ -3,7 +3,7 @@
 
 Synced automatically by SolveBase.
 
-**Total solved: 14**
+**Total solved: 15**
 
 ## Codeforces
 
@@ -22,7 +22,7 @@ Solutions by [Sinister007](https://codeforces.com/profile/Sinister007), organize
 
 Solutions organized by primary topic folder.
 
-**Solved: 11**
+**Solved: 12**
 
 | Topic | Solved |
 | --- | --- |
@@ -30,7 +30,7 @@ Solutions organized by primary topic folder.
 | [binary-search](./leetcode/binary-search) | 1 |
 | [bit-manipulation](./leetcode/bit-manipulation) | 2 |
 | [hash-table](./leetcode/hash-table) | 2 |
-| [math](./leetcode/math) | 3 |
+| [math](./leetcode/math) | 4 |
 | [segment-tree](./leetcode/segment-tree) | 1 |
 | [string](./leetcode/string) | 1 |
 
