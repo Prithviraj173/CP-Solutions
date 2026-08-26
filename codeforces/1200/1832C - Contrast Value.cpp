@@ -19,24 +19,20 @@ const int MOD = 1e9 + 7;
 void solve() {
     ll n;
     cin >> n;
-    vector<ll> arr(n);
-    for (int i = 0; i < n; ++i) cin >> arr[i];
-    vector<ll> st;
-    for (int i = 0; i < n; ++i) {
-        if (st.empty() || st.back() != arr[i]) {
-            st.push_back(arr[i]);
-        }
-    }
-    int m = st.size();
-    if (m == 1) {
+    vector<ll> st(n);
+    for(ll i = 0; i < n; i++) cin >> st[i];
+    st.erase(unique(st.begin(), st.end()), st.end());
+    ll m = st.size();
+    if(m == 1) {
         cout << 1 << endl;
         return;
+    } else {
+        ll ans = 2;
+        for(ll i = 1; i < m - 1; i++) {
+            if((st[i - 1] < st[i] && st[i] > st[i + 1]) || (st[i - 1] > st[i] && st[i] < st[i + 1])) ans++;
+        }
+        cout << ans << endl;
     }
-    int ans = 2; 
-    for (int i = 1; i < m - 1; ++i) {
-        if ((st[i] > st[i - 1] && st[i] > st[i + 1]) || (st[i] < st[i - 1] && st[i] < st[i + 1])) ans++;
-    }
-    cout << ans << endl;
 }
 
 int main() {
