@@ -3,7 +3,7 @@
 
 Synced automatically by SolveBase.
 
-**Total solved: 52**
+**Total solved: 53**
 
 ## Codeforces
 
@@ -25,7 +25,7 @@ Solutions by [Sinister007](https://codeforces.com/profile/Sinister007), organize
 
 Solutions organized by primary topic folder.
 
-**Solved: 27**
+**Solved: 28**
 
 | Topic | Solved |
 | --- | --- |
@@ -34,6 +34,7 @@ Solutions organized by primary topic folder.
 | [bit-manipulation](./leetcode/bit-manipulation) | 2 |
 | [dynamic-programming](./leetcode/dynamic-programming) | 1 |
 | [hash-table](./leetcode/hash-table) | 6 |
+| [linked-list](./leetcode/linked-list) | 1 |
 | [math](./leetcode/math) | 5 |
 | [segment-tree](./leetcode/segment-tree) | 1 |
 | [sliding-window](./leetcode/sliding-window) | 1 |
