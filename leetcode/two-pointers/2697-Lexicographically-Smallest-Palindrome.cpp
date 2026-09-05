@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/lexicographically-smallest-palindrome/
-// problem: 2697
-static int fast_io = []() { std::ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr); return 0; }();
-
 class Solution {
 public:
-    static string makeSmallestPalindrome(string& s) {
-        for (int l = 0, r = size(s) - 1; l < r; ++l, --r)
-            s[l] = s[r] = min(s[l], s[r]);
-            
+    string makeSmallestPalindrome(string s) {
+        int n = s.size(), l = 0, r = n - 1;
+        while(l < n / 2) {
+            s[l] = min(s[l], s[r]);
+            s[r] = s[l];
+            l++, r--; 
+        }
         return s;
     }
 };
