@@ -1,0 +1,157 @@
+#include<bits/stdc++.h>
+using namespace std;
+//#include<ext/pb_ds/assoc_container.hpp>
+//#include<ext/pb_ds/tree_policy.hpp>
+//using namespace __gnu_pbds;
+#define ll long long
+#define pr pair<ll, ll>
+#define vpr(v,n) vector<pair<ll,ll>>v(n)
+#define pb push_back
+#define forn(i,n) for(ll i=0;i<n;i++)
+#define forsn(i,s,n) for(ll i=s;i<n;i++)
+#define rforn(i,n) for(ll i=n-1;i>=0;i--)
+#define endl '\n';
+#define all(v) v.begin(),v.end()
+#define vi(v,n) vector<ll>v(n)
+const ll INF = 1e9;
+const ll INFLL = 1e18;
+const ll MOD = 1e9 + 7;
+inline ll logvalue(ll n) {
+    if (n <= 0) return -1;
+    return 31 - __builtin_clz(n);
+}
+ll sum_n(ll n) { 
+    return n * (n+1) / 2;
+}
+ll fact(ll n){
+    ll res = 1;
+    while(n > 1){
+        res *= n;
+        n--;
+    }
+    return res;
+}
+ll ncr(ll n, ll r){
+    return fact(n)/(fact(n-r)*fact(r));
+}
+ll npr(ll n, ll r){
+    return fact(n)/fact(n-r);
+}
+ll vmax(vector<ll> &v){
+    ll maxi = (-1)*INF;
+    for(ll i = 0; i < v.size(); i++){
+        if(v[i] > maxi){
+            maxi = v[i];
+        }
+    }
+    return maxi;
+}
+ll vmin(vector<ll> &v){
+    ll mini = INF;
+    for(ll i = 0; i < v.size(); i++){
+        if(v[i] < mini){
+            mini = v[i];
+        }
+    }
+    return mini;
+}
+ll gcdll(ll a, ll b){
+    return __gcd(a,b);
+}
+ 
+ll lcmll(ll a, ll b){
+    return (a/gcdll(a,b))*b;
+}
+bool isprime(ll n){
+    if(n < 2) return false;
+    for(ll i = 2; i*i <= n; i++){
+        if(n%i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+ll power(ll a, ll b){ //O(log(b))
+    ll res = 1;
+    while(b){
+        if(b & 1) res *= a;
+        a *= a;
+        b >>= 1;
+    }
+    return res;
+}
+//typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
+
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> a(n + 1);
+    for (int i = 1; i <= n; ++i) {
+        cin >> a[i];
+    }
+    int dp[3][2];
+    for (int s = 0; s < 3; ++s) {
+        for (int b = 0; b < 2; ++b) {
+            dp[s][b] = INF;
+        }
+    }
+    dp[1][0] = 0;
+    for (int i = 1; i <= n; ++i) {
+        int next_dp[3][2];
+        for (int s = 0; s < 3; ++s) {
+            for (int b = 0; b < 2; ++b) {
+                next_dp[s][b] = INF;
+            }
+        }
+        for (int s = 0; s < 3; ++s) {
+            for (int b = 0; b < 2; ++b) {
+                if (dp[s][b] == INF) continue;
+                if (!(a[i] == 1 && b == 1)) {
+                    int new_s = 0;
+                    int new_b = b;
+                    if (a[i] == 3) new_b = 0;
+                    else if (a[i] == 1) new_b = 1;
+                    
+                    next_dp[new_s][new_b] = min(next_dp[new_s][new_b], dp[s][b]);
+                }
+                if (a[i] != 3) {
+                    if (a[i] == 2) {
+                        if (s == 0) {
+                            next_dp[2][0] = min(next_dp[2][0], dp[s][b] + 1);
+                        }
+                    } else if (a[i] == 1) {
+                        if (s != 2) {
+                            int new_s = (s == 1) ? 2 : 1;
+                            next_dp[new_s][0] = min(next_dp[new_s][0], dp[s][b] + 1);
+                        }
+                    }
+                }
+            }
+        }
+        
+        for (int s = 0; s < 3; ++s) {
+            for (int b = 0; b < 2; ++b) {
+                dp[s][b] = next_dp[s][b];
+            }
+        }
+    }
+    int min_holes = INF;
+    for (int s = 0; s < 2; ++s) {
+        for (int b = 0; b < 2; ++b) {
+            min_holes = min(min_holes, dp[s][b]);
+        }
+    }
+    cout << n - min_holes << "\n";
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int t;
+    cin >> t;
+    while(t--) {
+        solve();
+    }
+    return 0;
+}
