@@ -11,20 +11,20 @@
 class Solution {
 public:
     ListNode* reverseEvenLengthGroups(ListNode* head) {
-        vector<int> res;
         ListNode* temp = head;
+        vector<int> res;
         while(temp) {
             res.push_back(temp -> val);
             temp = temp -> next;
         }
-        size_t start = 0, k = 1;
-        while(start < res.size()) {
-            size_t len = min(k, res.size() - start);
+        size_t n = res.size(), start = 0, k = 1;
+        while(start < n) {
+            size_t len = min(k, n - start);
             if(!(len & 1)) reverse(res.begin() + start, res.begin() + start + len);
             start += len;
             k++;
         }
-        if(res.size() == 0) return NULL;
+        if(!n) return NULL;
         temp = head;
         for(int num : res) {
             temp -> val = num;
