@@ -85,18 +85,30 @@ ll power(ll a, ll b){ //O(log(b))
 void solve() {
     ll n;
     cin >> n;
-    vector<ll> arr(n);
-    for(ll i = 0; i < n; i++) cin >> arr[i];
+    vector<pair<ll, ll>> v1(n);
     for(ll i = 0; i < n; i++) {
-        for(ll j = 0; j < n; j++) {
-            if(i == j) continue;
-            for(ll k = j + 1; k < n; k++) {
-                if(i == k) continue;
-                if(arr[i] == arr[j] + arr[k]) {
-                    cout << i + 1 << " " << j + 1 << " " << k + 1;
-                    return;
-                }
+        cin >> v1[i].first;
+        v1[i].second = i + 1;
+    }
+    sort(all(v1));
+    for(ll i = 0; i < n; i++) {
+        ll st = 0, end = n - 1;
+        ll target = v1[i].first, idx = v1[i].second;
+        while(st < end) {
+            if(st == i) {
+                st++;
+                continue;
             }
+            if(end == i) {
+                end--;
+                continue;
+            }
+            ll cur_sum = v1[st].first + v1[end].first;
+            if(target == cur_sum) {
+                cout << idx << " " << v1[st].second << " " << v1[end].second;
+                return;
+            } else if (cur_sum < target) st++;
+            else end--;
         }
     }
     cout << -1 << endl;
