@@ -3,18 +3,19 @@
 
 Synced automatically by SolveBase.
 
-**Total solved: 182**
+**Total solved: 183**
 
 ## Codeforces
 
 Solutions by [Sinister007](https://codeforces.com/profile/Sinister007), organized by difficulty rating.
 
-**Solved: 50**
+**Solved: 51**
 
 | Difficulty | Solved |
 | --- | --- |
 | [800](./codeforces/800) | 13 |
 | [900](./codeforces/900) | 1 |
+| [1000](./codeforces/1000) | 1 |
 | [1100](./codeforces/1100) | 8 |
 | [1200](./codeforces/1200) | 3 |
 | [1300](./codeforces/1300) | 4 |
