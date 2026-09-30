@@ -1,17 +1,27 @@
 class Solution {
 public:
     vector<int> maxDepthAfterSplit(string s) {
-        int res = 0;
-        vector<int> ans;
-        for(char c : s) {
-            if(c == '(') {
-                res++;
-                ans.push_back(res & 1);
+        vector<int> res;
+        int c1 = 0, c2 = 0;
+        for(int i = 0; i < s.length(); i++) {
+            if(s[i] == '(') {
+                if(c1 > c2) {
+                    c2++;
+                    res.push_back(1);
+                } else {
+                    c1++;
+                    res.push_back(0);
+                }
             } else {
-                ans.push_back(res & 1);
-                res--;
+                if(c1 > c2) {
+                    c1--;
+                    res.push_back(0);
+                } else {
+                    c2--;
+                    res.push_back(1);
+                }
             }
         }
-        return ans;
+        return res;
     }
 };
