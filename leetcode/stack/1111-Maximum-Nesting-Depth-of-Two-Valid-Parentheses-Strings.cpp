@@ -2,22 +2,22 @@ class Solution {
 public:
     vector<int> maxDepthAfterSplit(string s) {
         vector<int> res;
-        int c1 = 0, c2 = 0;
-        for(int i = 0; i < s.length(); i++) {
-            if(s[i] == '(') {
-                if(c1 > c2) {
-                    c2++;
+        stack<int> st1, st2;
+        for(char c : s) {
+            if(c == '(') {
+                if(st1.size() > st2.size()) {
+                    st2.push(c);
                     res.push_back(1);
                 } else {
-                    c1++;
+                    st1.push(c);
                     res.push_back(0);
                 }
             } else {
-                if(c1 > c2) {
-                    c1--;
+                if(st1.size() > st2.size()) {
+                    st1.pop();
                     res.push_back(0);
                 } else {
-                    c2--;
+                    st2.pop();
                     res.push_back(1);
                 }
             }
