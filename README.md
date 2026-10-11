@@ -3,13 +3,13 @@
 
 Synced automatically by SolveBase.
 
-**Total solved: 216**
+**Total solved: 217**
 
 ## Codeforces
 
 Solutions by [Sinister007](https://codeforces.com/profile/Sinister007), organized by difficulty rating.
 
-**Solved: 61**
+**Solved: 62**
 
 | Difficulty | Solved |
 | --- | --- |
@@ -19,7 +19,7 @@ Solutions by [Sinister007](https://codeforces.com/profile/Sinister007), organize
 | [1100](./codeforces/1100) | 9 |
 | [1200](./codeforces/1200) | 6 |
 | [1300](./codeforces/1300) | 4 |
-| [1400](./codeforces/1400) | 3 |
+| [1400](./codeforces/1400) | 4 |
 | [1500](./codeforces/1500) | 3 |
 | [1800](./codeforces/1800) | 1 |
 | [Unrated](./codeforces/Unrated) | 16 |
