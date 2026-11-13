@@ -3,20 +3,20 @@
 
 Synced automatically by SolveBase.
 
-**Total solved: 370**
+**Total solved: 371**
 
 ## Codeforces
 
 Solutions by [Sinister007](https://codeforces.com/profile/Sinister007), organized by difficulty rating.
 
-**Solved: 140**
+**Solved: 141**
 
 | Difficulty | Solved |
 | --- | --- |
 | [800](./codeforces/800) | 28 |
 | [900](./codeforces/900) | 6 |
 | [1000](./codeforces/1000) | 1 |
-| [1100](./codeforces/1100) | 14 |
+| [1100](./codeforces/1100) | 15 |
 | [1200](./codeforces/1200) | 8 |
 | [1300](./codeforces/1300) | 8 |
 | [1400](./codeforces/1400) | 11 |
