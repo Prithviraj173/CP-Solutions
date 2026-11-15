@@ -3,17 +3,17 @@
 
 Synced automatically by SolveBase.
 
-**Total solved: 383**
+**Total solved: 384**
 
 ## Codeforces
 
 Solutions by [Sinister007](https://codeforces.com/profile/Sinister007), organized by difficulty rating.
 
-**Solved: 149**
+**Solved: 150**
 
 | Difficulty | Solved |
 | --- | --- |
-| [800](./codeforces/800) | 30 |
+| [800](./codeforces/800) | 31 |
 | [900](./codeforces/900) | 6 |
 | [1000](./codeforces/1000) | 2 |
 | [1100](./codeforces/1100) | 16 |
